@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+/*
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+*/
+
+body {
+	font-family: 'Raleway', sans-serif;
+	text-align: left;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+		margin-top: 15px;
+  }
+
+.banner{
+  position: relative;
+  text-align: center;
+  background-image: url("../images/banner_dog.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 15% 3%
+}
+
+
+
+.marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.img-banner{
+ position: absolute;
+}
+
+
+.buscador-banner{
+  background-color: grey;
+  padding: 2%;
+}
+.container {
+	border: solid 1px red;
+}
