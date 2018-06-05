@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Barlow|Barlow+Condensed" rel="stylesheet">
@@ -20,10 +21,11 @@
         background-color: #FFFFFF;
         font-family: 'Barlow', sans-serif;
         color: #4a72b0;
-        width: 50%;
-        margin: 0px auto 0px auto;
-        padding: 50px 75px 50px 75px;
+        /*width: 50%;*/
+        margin: 0px auto;
+        padding: 50px;
         border-radius: 15px;
+        max-width: 700px;
       }
       h1 {
         font-family: 'Pacifico', cursive;
@@ -84,72 +86,81 @@
         color: #4a72b0;
         text-align: center;
       }
+      .name-in-footer{
+        font-family: 'Pacifico', cursive;
+      }
     </style>
 </head>
 <body>
-    <form>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <form>
+          <div class="main-container">
+          <div class="logo-container"><a href="#"><img src="images/logo2.png" alt="mascotas" class="small-logo"></img></a></div>
 
-      <div class="main-container">
-      <div class="logo-container"><a href="#"><img src="images/logo2.png" alt="mascotas" class="small-logo"></img></a></div>
+            <div class="header-form">
+              <h2>Bienvenido a<h2><h1>Patitas a casa<h1>
+            </div>
 
-        <div class="header-form">
-          <h2>Bienvenido a<h2><h1>Patitas a Casa<h1>
-        </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1"></label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email.com">
+            </div>
 
-        <div class="form-group">
-          <label for="exampleInputEmail1"></label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email.com">
-        </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1"></label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+            </div>
 
-        <div class="form-group">
-          <label for="exampleInputPassword1"></label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-        </div>
+            <div><button type="submit" class="btn-primary">INGRESA</button></div>
 
-        <div><button type="submit" class="btn-primary">INGRESA</button></div>
+            <div class="remember-password"><input type="checkbox" checked="checked" name="remember"> Recordar contraseña</div>
 
-        <div class="remember-password"><input type="checkbox" checked="checked" name="remember"> Recordar contraseña</div>
+            <div><span><a class="forgot-password" href="#">¿Olvidaste tu contraseña?</a></span></div>
 
-        <div><span><a class="forgot-password" href="#">¿Olvidaste tu contraseña?</a></span></div>
+            <div class="register"><h2>REGISTRATE</h2></div>
 
-        <div class="register"><h2>REGISTRATE</h2></div>
+            <div class="form-group">
+              <label for="exampleInputEmail1"></label>
+              <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Nombre">
+            </div>
 
-        <div class="form-group">
-          <label for="exampleInputEmail1"></label>
-          <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Nombre">
-        </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1"></label>
+              <input type="apellido" class="form-control" id="exampleInputApellido" aria-describedby="nameHelp" placeholder="Apellido">
+            </div>
 
-        <div class="form-group">
-          <label for="exampleInputEmail1"></label>
-          <input type="apellido" class="form-control" id="exampleInputApellido" aria-describedby="nameHelp" placeholder="Apellido">
-        </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1"></label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
+            </div>
 
-        <div class="form-group">
-          <label for="exampleInputEmail1"></label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
-        </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1"></label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+            </div>
 
-        <div class="form-group">
-          <label for="exampleInputPassword1"></label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-        </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1"></label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirma tu contraseña">
+            </div>
 
-        <div class="form-group">
-          <label for="exampleInputPassword1"></label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirma tu contraseña">
-        </div>
+            <div><button type="createAccount" class="btn-primary">CREA TU CUENTA</button></div>
 
-        <div><button type="createAccount" class="btn-primary">CREA TU CUENTA</button></div>
+            <br/>
 
-        <br/>
+            <div class="footer-form">
+              <p> Al registrarme, declaro que soy mayor de edad y acepto <a href="#">los Términos y condiciones y las Políticas de privacidad </a>de <span class="name-in-footer">Patitas a casa</span></p>
+            </div>
 
-        <div class="footer-form">
-          <p> Al registrarme, declaro que soy mayor de edad y acepto <a href="#">los Términos y condiciones y las Políticas de privacidad </a>de xxxxxxxxx</p>
-        </div>
+    </div>
 
-</div>
+    </form>
+      </div>
+    </div>
+  </div>
 
-</form>
 
      <script type="text/javascript" src="js/bootstrap.min.js">
      </script>
