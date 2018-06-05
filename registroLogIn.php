@@ -4,12 +4,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Barlow|Barlow+Condensed" rel="stylesheet">
-    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+      <meta charset="utf-8">
     <title></title>
   <style>
-     * {
-       box-sizing: border-box;
-     }
+  * {
+    box-sizing: border-box;
+  }
      body {
       background-image: url(images/background5.png);
       background-size: 100%;
@@ -23,9 +24,11 @@
         margin: 0px auto 0px auto;
         padding: 50px 75px 50px 75px;
         border-radius: 15px;
-        text-transform: uppercase;
       }
-      h1, h2 {
+      h1 {
+        font-family: 'Pacifico', cursive;
+      }
+      h2 {
         font-family: 'Barlow Condensed', sans-serif;
       }
       .logo-container {
@@ -42,19 +45,19 @@
         text-align: center;
         padding: 10px 20px;
         margin-bottom: 10px;
-        border-radius: 5px;
+      /*border-radius: 5px; */
       }
       .form-group {
         margin: auto;
       }
       .btn-primary {
-   			background-color: #e5b449;
+   			background-color: #EBA23F;
    			color: #FFFFFF;
         width: 100%;
    			font-size: 1.2em;
    			padding: 10px 20px;
    			border: none;
-   			border-radius: 15px;
+   			border-radius: 50px;
         margin-top: 10px;
       }
       .remember-password {
@@ -71,7 +74,7 @@
         color: #FFFFFF;
         margin: 35px 0px 10px 0px;
         padding: 8px;
-        border-radius: 15px;
+        border-radius: 50px;
         font-size: 1.2em;
         text-align: center;
         font-weight: bold;
@@ -90,7 +93,7 @@
       <div class="logo-container"><a href="#"><img src="images/logo2.png" alt="mascotas" class="small-logo"></img></a></div>
 
         <div class="header-form">
-          <h1>Bienvenido a<h1>
+          <h2>Bienvenido a<h2><h1>Patitas a Casa<h1>
         </div>
 
         <div class="form-group">
@@ -109,7 +112,7 @@
 
         <div><span><a class="forgot-password" href="#">¿Olvidaste tu contraseña?</a></span></div>
 
-        <div class="register"><h2>Registrate</h2></div>
+        <div class="register"><h2>REGISTRATE</h2></div>
 
         <div class="form-group">
           <label for="exampleInputEmail1"></label>
