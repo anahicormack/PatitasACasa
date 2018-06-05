@@ -1,0 +1,511 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0; /*porque no se pega al borde de la pagina??*/
+  padding: 0;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+  font-family: 'Barlow Condensed', sans-serif; /*ponerla NO negrita*/
+  /* color: #ffffff; */
+  font-size: 2em;
+  text-decoration: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: url(../img/huesitos.png) center center/cover
+}
+
+
+/*HEADER*/
+
+#abrirMenu {
+  display: none;
+}
+
+.mi-header .container-fluid {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header-top {
+  width: auto;
+  margin: auto;
+  background-color: #ffffff;
+}
+
+.header-top img {
+  padding: 0;
+  margin: 15px;
+  border: 0;
+  width: 300px;
+}
+
+.main-header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.main-nav {
+  background-color: #4A72B0;
+}
+
+.main-nav a {
+	color: #ffffff;
+	font-size: 1em;
+	display: block;
+	padding: 4px;
+	text-align: center;
+  text-decoration: none;
+}
+
+.main-nav a:hover{
+  color: #93bfe8;
+}
+
+.main-nav a:active{
+  color: #DD9C43;
+}
+
+#toggle-lines {
+  margin: auto;
+  display: block;
+  background-color: #ffffff;
+}
+
+#toggle-lines .ion-navicon-round{
+  color: #ffffff;
+  font-size: 1.5em;
+  background-color: #4A72B0;
+  padding: 10px 12px 6px 12px ;
+  border-radius: 30%;
+}
+
+#header-ul {
+  display: none;
+}
+
+@media (max-width: 900px) {
+
+  #header-ul {
+    margin: 0;
+    width: 100%;
+    padding: 10px 0 10px 0;
+  }
+
+  #header-ul ul{
+  display: flex;
+  flex-direction: column;
+  }
+
+  #header-ul a {
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+
+  #abrirMenu:checked ~ #header-ul{
+    display: block;
+  }
+}
+
+@media (min-width: 900px){
+  #toggle-lines {
+    display: none;
+  }
+
+  #header-ul {
+    width: 100%;
+  	list-style: none;
+  	margin: 0;
+  	padding: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items: center;
+  }
+
+}
+
+@media (max-width: 340px) {
+  .header-top img {
+    width: 80%;
+  }
+}
+
+
+  #header-ul .btn {
+  border-radius: 50px;
+  padding: 5px 30px;
+  font-size: 1em;
+  height: 100%;
+}
+
+/* HEADER */
+
+
+/*FOOTER*/
+
+#mi-footer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+/*porque no funciona con una class???*/
+
+#mi-footer .container-fluid {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
+
+#mi-footer .container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.main-footer {
+  position:sticky;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.footer1 {
+  background-color: #4A72B0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+  width: 100%;
+}
+
+.footer1 label {
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
+
+.footer1 input  {
+  color: #000000;
+  text-align: center;
+  width: 100%;
+  border: none;
+  border-radius: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.footer1 .btn {
+  border-radius: 50px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.footer1 .btn a{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+
+#footer-icons {
+  color: #4A72B0;
+  font-size: 3.5em;
+  margin-top: 15px;
+  margin-bottom: 0;
+  background-color: #ffffff;
+}
+
+#footer-icons a {
+  margin:8px;
+  background-color: #ffffff
+}
+
+.footer-last {
+  width: auto;
+  margin: auto;
+  background-color: #ffffff;
+}
+
+.footer-last img
+{
+  padding: 0;
+  margin: 10px;
+  margin-top: 0;
+  border: 0;
+  width: 200px;
+}
+
+
+@media (max-width: 1200px) {
+  input  {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1200px) {
+  input  {
+    width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  input  {
+    width: 60%;
+  }
+}
+
+@media (max-width: 460px) {
+  input  {
+    width: 80%;
+  }
+  .footer1 {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  input  {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer1 label, input, .btn {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+}
+
+@keyframes example {
+    from {color:#4A72B0;}
+    to {color: #DD9C43;}
+}
+
+.fb-icon:hover, .twitter-icon:hover, .insta-icon:hover {
+  animation-name: example;
+  animation-duration: 0.3s;
+}
+
+.fb-icon:hover, .twitter-icon:hover, .insta-icon:hover {
+  color: #DD9C43;
+}
+
+/*FOOTER*/
+
+/*PREGUNTAS*/
+
+.container-preguntas {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*PORQUE NO ME LOS ALINEA EN EL MEDIO DE LA PAGINA mientras:*/
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+
+.preguntas-titulo {
+  background-color: #eba23f;
+  margin: auto;
+  border-radius: 50px;
+  padding: 15px;
+  margin-bottom: 5%;
+  width: 100%;
+}
+
+.preguntas-titulo h1  {
+  color: #ffffff;
+  margin: auto;
+  font-size: 1.8em;
+ /*porque no me funciona??*/
+}
+
+.preguntas-opciones {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+}
+
+.opcion {
+  margin: 10px;
+  background-color: rgb(255, 255, 255,0.5);
+  border-radius: 10%;
+  border-color: #4A72B0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+
+}
+
+.opcion-imagen img {
+width: 200px;
+margin-bottom: 10px;
+}
+
+.opcion-texto h2{
+  color: #4A72B0;
+  text-decoration: none;
+}
+
+
+.opcion:hover{
+  background-color: #ffffff;
+  text-decoration: none; /*NO FUNCIONA!!!*/
+}
+
+h2:hover{
+  text-decoration: none; /*NO FUNCIONA!!!*/
+}
+
+.opcion-texto a:hover {
+  text-decoration: none; /*NO FUNCIONA!!!*/
+}
+
+@media (min-width: 280px) {
+  .preguntas-titulo {
+    width: 90%;
+  }
+}
+
+
+@media (min-width: 760px) {
+  .preguntas-titulo {
+    width: 700px;
+  }
+
+}
+
+/*PREGUNTAS ADOPCION*/
+.preguntas-frecuentes h2 {
+  color: #4A72B0;
+}
+
+.panel .panel-heading {
+  background-color: rgba(74, 114, 176, 0.7);
+  border: none;
+}
+
+.preguntas-frecuentes {
+  background-color: #4A72B0;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.preguntas-frecuentes h2 {
+  color: #ffffff;
+}
+
+#accordion a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1.5em;
+
+}
+
+.panel-group .panel-heading + .panel-collapse > .panel-body {
+  border: none;
+}
+
+.panel-body h4 {
+  font-size: 1em;
+}
+
+.panel-body p {
+  font-size: 0.7em;
+  color: #4A72B0;
+}
+
+.panel-body a {
+  font-size: 0.7em;
+  color: #4A72B0;
+}
+
+
+.consideraciones {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.consideraciones p {
+  font-size: 0.5em;
+  color: #4A72B0;
+}
+
+.consideraciones {
+  background-color: #ffffff;
+  margin: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 30px;
+}
+
+.consideraciones h3 {
+  color:  #eba23f;
+  text-align: center;
+  font-size: 1em;
+}
+.consideraciones p {
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.consideraciones h4 {
+  color:  #eba23f;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+textarea {
+text-align: center;
+resize: none;
+border-radius: 15px;
+border-style: solid;
+margin-top: 5px;
+margin-bottom: 5px;
+font-size: 0.8em;
+color: #4A72B0;
+width: 80%;
+}
+label {
+  color: #4A72B0;
+}
+
+#help-btn /*igual que #suscribe-btn */{
+  border-radius: 50px;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+}
+
+#help-btn a {
+  color: #ffffff;
+}
+
+
+.
