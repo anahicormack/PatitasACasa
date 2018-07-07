@@ -12,35 +12,11 @@
   </head>
   <body>
 
-    <!--HEADER--> <!-- Aca habria que insertar el archivo header.html con PHP include_once, y borrar el codigo-->
-
-    <div class ="mi-header">
-    <div class ="container-fluid">
-      <header class="main-header">
-        <div class="header-top">
-            <img src="img/logo.png" alt="logotipo" class="logo" width="200px" class="img-responsive">
-        </div>
-        <nav class="main-nav">
-          <a href="#" class="toggle" id="toggle-lines">
-            <label for="abrirMenu">
-              <span class="ion-navicon-round"><ion-icon name="menu"></ion-icon></span>
-            </label>
-          </a>
-          <input type="checkbox" id="abrirMenu">
-          <ul id="header-ul">
-            <li><a href="Index.html">INICIO</ion-icon></a></li>
-            <li><a href="FAQ.html">PREGUNTAS FRECUENTES</a></li>
-            <li><a href="construction.html">ADOPTAR UN PERRO</a></li>
-            <li><a href="construction.html">ADOPTAR UN GATO</a></li>
-            <li><a href="construction.html">ANTES Y DESPUES</a></li>
-            <li><a href="registroLogIn.html"><button type="button" class="btn btn-warning"><ion-icon name="paw"></ion-icon> LOG IN</button></a></li>
-          </ul>
-        </nav>
-      </header>
-    </div>
-    </div>
-
-    <!--HEADER-->
+<!--HEADER-->
+    <?php
+    require_once("./header.php");
+     ?>
+<!--FIN HEADER-->
 
 <div class="container">
   <div class="preguntas-frecuentes">
@@ -156,40 +132,10 @@ Pero un animal te dará amor incondicional, compañía y mejorará para siempre 
 </form>
 </div>
 
-<!--FOOTER--> <!-- Aca habria que insertar el archivo footer.html con PHP include_once, y borrar el codigo-->
-<div clas="mi-footer" id="mi-footer">
-<div class ="container-fluid">
-  <footer class="main-footer" >
-    <div class="container">
-      <div class= "footer1">
-        <form action= "script.php" method="post">
-          <div class="row">
-            <div class= "col-12 col-s-12 col-md-12 col-lg-5">
-              <label for="email-input"> ¡NO TE PIERDAS NUESTRAS NOTICIAS! </label>
-            </div>
-            <div class= "col-12 col-s-12 col-md-12 col-lg-4">
-              <input type="email" placeholder="E-mail" name="correo">
-            </div>
-            <div class= "col-12 col-s-12 col-md-12 col-lg-3">
-              <button type="button" class="btn btn-warning" class="suscribe-btn"> <a href="mailto:jose_herrera97@icloud.com"> SUSCRIBIRME </a> </button>
-            </div>
-          </div>
-      </form>
-      </div>
-
-
-    <div class="container" id="footer-icons">
-      <a href= "https://www.facebook.com/" target="_blank"><ion-icon name="logo-facebook" class="fb-icon"></ion-icon></a>
-      <a href= "https://www.instagram.com/" target="_blank"><ion-icon name="logo-instagram" class="insta-icon"></ion-icon></a>
-      <a href= "https://www.twitter.com/" target="_blank"><ion-icon name="logo-twitter" class="twitter-icon"></ion-icon></a>
-    </div>
-    <div class="footer-last">
-        <img src="img/logo.png" alt="logotipo" class="logo" class="img-responsive">
-    </div>
-      </div>
-    </div>
-  </footer>
-</div>
+<!--FOOTER-->
+  <?php
+    require_once("footer.php");
+  ?>
 <!--FIN FOOTER-->
 
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script> <!--ionicons-->

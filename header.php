@@ -12,6 +12,11 @@
   </head>
 
   <body>
+
+  <?php
+  include_once('funcionesProyectoFinal.php');
+  ?>
+
 <div class ="mi-header">
 <div class="container-fluid">
   <header class="main-header">
@@ -31,7 +36,17 @@
         <li><a href="construction.php">ADOPTAR UN PERRO</a></li>
         <li><a href="construction.php">ADOPTAR UN GATO</a></li>
         <li><a href="construction.php">ANTES Y DESPUES</a></li>
+
+<!-- Si esta logueado, mostrarme un echo del nombre y mandarlo a su perfil-->
+<?php if (estaLogueado()):?>
+  <?php $usuario = traerPorID($_SESSION['id'])?>
+        <li> <a href="perfilUsuario.php"><button type="button" class="btn btn-warning"> <?=$usuario['name']?> </button> </a> </li>
+
+<!-- Si no esta logueado mostrarme el boton de Log In y mandarlo a registrarse-->
+  <?php else: ?>
         <li><a href="registroLogIn.php"><button type="button" class="btn btn-warning"><ion-icon name="paw"></ion-icon> LOG IN</button></a></li>
+<?php endif; ?>
+
       </ul>
     </nav>
   </header>
