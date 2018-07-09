@@ -69,8 +69,8 @@ function traerTodos(){
   $usuariosArrayJSON = explode(PHP_EOL, $usuarioJSON);
   foreach($usuariosArrayJSON as $value){
     $usuariosPHP[] = json_decode($value, true);
-    array_pop($usuariosPHP);
   }
+  array_pop($usuariosPHP);
   return $usuariosPHP;
 }
 
@@ -86,6 +86,7 @@ function existeEmail($email) {
 
 function existeEmailYPassword($email, $password) {
   $usuarios = traerTodos();
+
   foreach ($usuarios as $unUsuario){
     if($email == $unUsuario["email"] && password_hash($password, PASSWORD_DEFAULT)){
       return $unUsuario;
@@ -93,6 +94,7 @@ function existeEmailYPassword($email, $password) {
     }
   return false;
 }
+
 
 function traerUltimoID() {
   $usuarios = traerTodos();
