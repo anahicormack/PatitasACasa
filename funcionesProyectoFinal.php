@@ -163,6 +163,10 @@ function traerPorId($id){
 }
 
 function estaLogueado() {
+  if (isset($_COOKIE["id"])){
+    loguear(traerPorId($_COOKIE["id"]));
+  }
+
   if(isset($_SESSION["id"])){
     return traerPorId($_SESSION["id"]);
   }

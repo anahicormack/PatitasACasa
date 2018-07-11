@@ -27,11 +27,18 @@ if($_POST){
 
     $errores = validarLogin($_POST);
 
+
     if (empty($errores)) {
 
       $usuario = existeEmailYPassword($emailLogin, $passwordLogin);
       if ($usuario) {
         loguear($usuario);
+
+        if ($_POST["remember"]){
+          setcookie("id", $usuario["id"], time() + 3600);
+        }
+
+
         header('location: perfil.php');
         exit;
       } else {
@@ -222,8 +229,12 @@ if($_POST){
             </div>
 
             <div><button type="submit" class="btn-primary">INGRESA</button></div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" value="yes" name="remember">
+              <label class="form-check-label" for="exampleCheck1">Recordar usuario</label>
+            </div>
           </form>
-          <div class="remember-password"><input type="checkbox" checked="checked" name="remember"> Recordar contraseña</div>
+
 
           <div><span><a class="forgot-password" href="#">¿Olvidaste tu contraseña?</a></span></div>
 

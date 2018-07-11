@@ -1,5 +1,4 @@
 <?php
-
 require_once('funcionesProyectoFinal.php');
 
 if(!estaLogueado()) {
@@ -9,6 +8,7 @@ if(!estaLogueado()) {
 if (isset($_GET['logout']))
 {
   session_destroy();
+  setcookie('id', null, time() - 3600);
   header('Location: registroLogIn.php');
 }
 
