@@ -140,6 +140,7 @@ if($_POST){
    			border: none;
    			border-radius: 50px;
         margin-top: 10px;
+        font-family: 'Barlow Condensed', sans-serif;
       }
       .remember-password {
         font-size: 0.7em;
@@ -159,6 +160,7 @@ if($_POST){
         font-size: 1.2em;
         text-align: center;
         font-weight: bold;
+        font-family: 'Barlow Condensed', sans-serif;
       }
       .select-pais {
         font-style: italic;
@@ -192,11 +194,19 @@ if($_POST){
         padding: 50px;
         text-align: center;
       }
+
+      .registroOk {
+        color: #4a72b0;
+        font-family: 'Barlow Condensed', sans-serif;
+        text-align: left;
+        font-size: 1.4em;
+        margin-left: 5px;
+      }
     </style>
 </head>
 <body>
   <?php if(isset($_GET['registroOK'])): ?>
-    <div>Registro OK</div>
+    <div class="registroOk">¡Registro Exitoso!</div>
   <?php endif; ?>
   <div class="errors-container" style="display: <?php echo isset($visible) ? $visible : '' ; ?>">
     <div class="errors"
@@ -292,7 +302,7 @@ if($_POST){
             <br/>
 
             <div class="footer-form">
-              <p> Al registrarme, declaro que soy mayor de edad y acepto <a href="#">los Términos y condiciones y las Políticas de privacidad </a>de <span class="name-in-footer">Patitas a casa</span></p>
+              <p> Al registrarme, declaro que soy mayor de edad y acepto los<a href="construction.php"> Términos y condiciones y las Políticas de privacidad </a>de <span class="name-in-footer">Patitas a casa</span></p>
             </div>
 
     </div>

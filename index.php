@@ -14,69 +14,62 @@
   <body>
 
     <!--HEADER-->
-        <?php
-        require_once("header.php");
-         ?>
+    <?php
+      require_once("header.php");
+     ?>
   <!--FIN HEADER-->
 
   <!--INDEX-->
-    <div class ="espacio01"> </div>
-    <div class ="containerBusqueda">
-      <div class ="busquedaMascota">
-        <img src="img/dogbanner02.jpg" alt="dog01" width=100% class="imgDog">
-
-        <div class="containerFormulario">
-          <form action= "script.php" method="post" class="formularioBusqueda">
-            <div class="container-fluid">
-            <label> ESTOY BUSCANDO...</label>
-            </div>
-            <div class="container-fluid">
-            <div>
-                <select class="selectpicker"  title="ANIMAL" data-width="40%">
-                  <option>PERRO</option>
-                  <option>GATO</option>
-                </select>
-              </div>
-              <div class="select01">
-                <select class="selectpicker" title="ZONA" data-width="40%">
-                  <option>CABA</option>
-                  <option>GBA Zona Norte</option>
-                  <option>GBA Zona Sur</option>
-                  <option>GBA Zona Este</option>
-                  <option>GBA Zona Oeste</option>
-                  <option>Otro</option>
-                </select>
-                <select class="selectpicker"  title="EDAD" data-width="40%">
-                  <option>0 - 3 años</option>
-                  <option>3 - 10 años</option>
-                  <option> + 10 años</option>
-                </select>
-            </div>
-            <div class="select02">
-                <select class="selectpicker"  title="TAMAÑO" data-width="40%">
-                  <option>Chico</option>
-                  <option>Mediano</option>
-                  <option>Grande</option>
-                </select>
-                <select class="selectpicker"  title="SEXO" data-width="40%">
-                  <option>Hembra</option>
-                  <option>Macho</option>
-                </select>
-            </div>
-              <div>
-              <a href="construction.html"><button type="button" class="btn btn-warning" id="btnBuscar"> ¡BUSCAR! </button></a>
-              </div>
+  <div class ="espacio01"> </div>
+      <div class="containerFormulario">
+        <form action= "script.php" method="post" class="formularioBusqueda">
+          <div class="container-fluid">
+          <label> ESTOY BUSCANDO...</label>
           </div>
-          </form>
+          <div class="container-fluid">
+          <div>
+              <select class="selectpicker"  title="ANIMAL" data-width="40%">
+                <option>PERRO</option>
+                <option>GATO</option>
+              </select>
+            </div>
+            <div class="select01">
+              <select class="selectpicker" title="ZONA" data-width="40%">
+                <option>CABA</option>
+                <option>GBA Zona Nort</option>
+                <option>GBA Zona Este</option>
+                <option>GBA Zona Oeste</option>
+                <option>GBA Zona Sur</option>
+                <option>Otro</option>
+              </select>
+              <select class="selectpicker"  title="EDAD" data-width="40%">
+                <option>0 - 3 años</option>
+                <option>3 - 10 años</option>
+                <option> + 10 años</option>
+              </select>
+          </div>
+          <div class="select02">
+              <select class="selectpicker"  title="TAMAÑO" data-width="40%">
+                <option>Chico</option>
+                <option>Mediano</option>
+                <option>Grande</option>
+              </select>
+              <select class="selectpicker"  title="SEXO" data-width="40%">
+                <option>Hembra</option>
+                <option>Macho</option>
+              </select>
+          </div>
+            <div>
+            <a href="construction.php"><button type="button" class="btn btn-warning" id="btnBuscar"> ¡BUSCAR! </button></a>
+            </div>
         </div>
-
+        </form>
       </div>
-    </div>
   <!--FIN INDEX-->
     <div class ="espacio01"> </div>
   <!--FOOTER-->
   <?php
-    require_once("footer.html");
+    require_once("footer.php");
    ?>
   <!--FIN FOOTER-->
 
