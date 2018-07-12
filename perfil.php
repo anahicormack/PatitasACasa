@@ -20,8 +20,9 @@ if (isset($_GET['logout']))
     <title></title>
   </head>
   <body>
-  <h1>  Bienvenido a tu perfil<h1>
+  <h2>  Bienvenido a tu perfil<h2>
     <a href="perfil.php?logout">Cerrar sesión</a>
-
+  <h2><a href="index.php">Volver a Página Principal</a></h2>
+  <h2><a href="PreguntasAdopcion.php">Ir a Preguntas Frecuentes</a></h2>
   </body>
 </html>
