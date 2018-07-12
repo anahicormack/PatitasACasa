@@ -23,7 +23,7 @@
     <div class ="espacio01"> </div>
     <div class ="containerBusqueda">
       <div class ="busquedaMascota">
-        <img src="img/dogbanner02.jpg" alt="dog01" width=100%>
+        <img src="img/dogbanner02.jpg" alt="dog01" width=100% class="imgDog">
 
         <div class="containerFormulario">
           <form action= "script.php" method="post" class="formularioBusqueda">
@@ -40,13 +40,16 @@
               <div class="select01">
                 <select class="selectpicker" title="ZONA" data-width="40%">
                   <option>CABA</option>
-                  <option>GBA</option>
+                  <option>GBA Zona Norte</option>
+                  <option>GBA Zona Sur</option>
+                  <option>GBA Zona Este</option>
+                  <option>GBA Zona Oeste</option>
                   <option>Otro</option>
                 </select>
                 <select class="selectpicker"  title="EDAD" data-width="40%">
-                  <option>0 - 3</option>
-                  <option>3 - 10</option>
-                  <option> + 10</option>
+                  <option>0 - 3 años</option>
+                  <option>3 - 10 años</option>
+                  <option> + 10 años</option>
                 </select>
             </div>
             <div class="select02">

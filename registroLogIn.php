@@ -7,7 +7,7 @@ if(estaLogueado()) {
   exit;
 }
 
-$paises = ["Argentina", "Paraguay", "Uruguay", "Chile", "Bolivia", "otro"];
+$paises = ["CABA", "GBA Zona Norte", "GBA Zona Sur", "GBA Zona Este", "GBA Zona Oeste", "Otro"];
 
 $errores = [];
 
@@ -85,7 +85,7 @@ if($_POST){
     box-sizing: border-box;
   }
      body {
-      background-image: url(images/background5.png);
+      background-image: url(images/background2.png);
       background-size: 100%;
       padding: 10px 0 10px 0px;
      }
@@ -110,7 +110,8 @@ if($_POST){
         text-align: center;
       }
       .small-logo {
-        width:45%;
+        width:40%;
+        margin-bottom: 0px;
       }
       .header-form {
         /*background-color:#4a72b0;*/
@@ -119,6 +120,7 @@ if($_POST){
         text-align: center;
         padding: 10px 20px;
         margin-bottom: 10px;
+        margin-top: 0px;
       /*border-radius: 5px; */
       }
       .form-group {
@@ -212,7 +214,7 @@ if($_POST){
       <div class="col">
         <form method="post">
           <div class="main-container">
-          <div class="logo-container"><a href="#"><img src="images/logo2.png" alt="mascotas" class="small-logo"></img></a></div>
+          <div class="logo-container"><a href="Index.php"><img src="images/logo.jpeg" alt="mascotas" class="small-logo"></img></a></div>
 
             <div class="header-form">
               <h2>Bienvenido a<h2><h1>Patitas a casa<h1>
@@ -220,7 +222,7 @@ if($_POST){
 
             <div class="form-group">
               <label for="exampleInputEmail1"></label>
-              <input type="email" name="email-login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email.com" value="<?=$emailLogin?>">
+              <input type="email" name="email-login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email.com" value="<?=$emailLogin?>">
             </div>
 
             <div class="form-group">
@@ -252,7 +254,7 @@ if($_POST){
 
             <div class="form-group">
               <label for="exampleInputEmail1"></label>
-              <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="email" value="<?=$email?>">
+              <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Email" value="<?=$email?>">
             </div>
 
             <div class='form-group'>
