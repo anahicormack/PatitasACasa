@@ -88,7 +88,7 @@ function existeEmailYPassword($email, $password) {
   $usuarios = traerTodos();
 
   foreach ($usuarios as $unUsuario){
-    if($email == $unUsuario["email"] && password_hash($password, PASSWORD_DEFAULT)){
+    if($email == $unUsuario["email"] && password_verify($password, $unUsuario["password"]) == $unUsuario["password"]){
       return $unUsuario;
       }
     }
