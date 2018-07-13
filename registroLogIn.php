@@ -224,7 +224,7 @@ if($_POST){
       <div class="col">
         <form method="post">
           <div class="main-container">
-          <div class="logo-container"><a href="Index.php"><img src="images/logo.jpeg" alt="mascotas" class="small-logo"></img></a></div>
+          <div class="logo-container"><a href="index.php"><img src="images/logo.jpeg" alt="mascotas" class="small-logo"></img></a></div>
 
             <div class="header-form">
               <h2>Bienvenido a<h2><h1>Patitas a casa<h1>
