@@ -117,7 +117,7 @@ function guardarImagen($inputFoto){
 
         if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png') {
             $dondeEstoy = dirname(__FILE__);
-            $dondeLoVoyAGuardar = $dondeEstoy . DIRECTORY_SEPARATOR . uploadsProyectoFinal . DIRECTORY_SEPARATOR . traerUltimoID().'.'.$ext;
+            $dondeLoVoyAGuardar = $dondeEstoy . DIRECTORY_SEPARATOR . 'uploadsProyectoFinal' . DIRECTORY_SEPARATOR . traerUltimoID().'.'.$ext;
             move_uploaded_file($archivo, $dondeLoVoyAGuardar);
         }else {
             $errores[$inputFoto] = 'Sube tu foto con un formato valido';
