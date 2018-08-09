@@ -231,12 +231,12 @@ if($_POST){
             </div>
 
             <div class="form-group">
-              <label for="exampleInputEmail1"></label>
+              <label for="exampleInputEmail1">Ingresa tu email</label>
               <input type="email" name="email-login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email.com" value="<?=$emailLogin?>">
             </div>
 
             <div class="form-group">
-              <label for="exampleInputPassword1"></label>
+              <label for="exampleInputPassword1">Ingresa tu contraseña</label>
               <input type="password" name="password-login" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
             </div>
 
@@ -253,22 +253,22 @@ if($_POST){
           <div class="register"><h2>REGISTRATE</h2></div>
           <form method="post" enctype="multipart/form-data">
             <div class="form-group">
-              <label for="exampleInputName"></label>
+              <label for="exampleInputName">Ingresa tu nombre</label>
               <input type="name" class="form-control" id="exampleInputName" name="name" aria-describedby="nameHelp"  placeholder="Nombre" value="<?=$name?>">
             </div>
 
             <div class="form-group">
-              <label for="exampleInputApellido"></label>
+              <label for="exampleInputApellido">Ingresa tu apellido</label>
               <input type="name" class="form-control" id="exampleInputlastname" name="lastname" aria-describedby="nameHelp" placeholder="Apellido" value="<?=$lastname?>">
             </div>
 
             <div class="form-group">
-              <label for="exampleInputEmail1"></label>
+              <label for="exampleInputEmail1">Ingresa tu email</label>
               <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Email" value="<?=$email?>">
             </div>
 
             <div class='form-group'>
-              <label for='pais'></label>
+              <label for='pais'>¿De dónde sos?</label>
               <select class="form-control select-pais" name="country">
                 <option class="select-pais">¿Dónde vives?</option>
                 <?php foreach ($paises as $pais):?>
@@ -282,18 +282,18 @@ if($_POST){
             </div>
 
             <div class="form-group">
-              <label for="exampleInputPassword1"></label>
+              <label for="exampleInputPassword1">Ingresa tu contraseña</label>
               <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Contraseña">
             </div>
 
             <div class="form-group">
-              <label for="exampleInputPassword1"></label>
+              <label for="exampleInputPassword1">Confirma tu contraseña</label>
               <input type="password" class="form-control" id="exampleInputPassword1" name="rpassword" placeholder="Confirma tu contraseña">
             </div>
 
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="inputGroupFile01" name="archivo">
-              <label class="custom-file-label" for="inputGroupFile01">Tu foto de perfil</label>
+              <label class="custom-file-label" for="inputGroupFile01">Ingresa tu foto de perfil</label>
             </div>
 
             <div><button type="createAccount" class="btn-primary">CREA TU CUENTA</button></div>
