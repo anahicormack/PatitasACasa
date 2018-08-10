@@ -222,7 +222,7 @@ if($_POST){
   <div class="container">
     <div class="row">
       <div class="col">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
           <div class="main-container">
           <div class="logo-container"><a href="index.php"><img src="images/logo.jpeg" alt="mascotas" class="small-logo"></img></a></div>
 
