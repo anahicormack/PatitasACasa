@@ -282,6 +282,11 @@ if($_POST){
             </div>
 
             <div class="form-group">
+              <label for="exampleInputPassword1">Contanos sobre vos</label>
+              <input type="textarea" class="form-control" id="exampleInputPassword1" name="sobreVos" placeholder="Confirma tu contraseña">
+            </div>
+
+            <div class="form-group">
               <label for="exampleInputPassword1">Ingresa tu contraseña</label>
               <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Contraseña">
             </div>
@@ -302,7 +307,7 @@ if($_POST){
             <br/>
 
             <div class="footer-form">
-              <p> Al registrarme, declaro que soy mayor de edad y acepto los<a href="construction.php"> Términos y condiciones y las Políticas de privacidad </a>de <span class="name-in-footer">Patitas a casa</span></p>
+              <p> Al registrarme, declaro que soy mayor de edad y acepto los<a href="terminosCondiciones.php"> Términos y condiciones y las Políticas de privacidad </a>de <span class="name-in-footer">Patitas a casa</span></p>
             </div>
 
     </div>
