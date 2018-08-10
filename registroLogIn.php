@@ -7,14 +7,14 @@ if(estaLogueado()) {
   exit;
 }
 
-$paises = ["CABA", "GBA Zona Norte", "GBA Zona Sur", "GBA Zona Este", "GBA Zona Oeste", "Otro"];
+$zonas = ["CABA", "GBA Zona Norte", "GBA Zona Sur", "GBA Zona Este", "GBA Zona Oeste", "Otro"];
 
 $errores = [];
 
 $name = "";
 $lastname = "";
 $email = "";
-$country = "";
+$zonaPertenencia = "";
 $password = "";
 $rpassword = "";
 $emailLogin = "";
@@ -49,7 +49,7 @@ if($_POST){
     $name = trim($_POST["name"]);
     $lastname = trim($_POST["lastname"]);
     $email = trim($_POST["email"]);
-    $country = $_POST["country"];
+    $zonaPertenencia = $_POST["zonaPertenencia"];
     $password = trim($_POST["password"]);
     $rpassword = trim($_POST["rpassword"]);
 
@@ -269,13 +269,13 @@ if($_POST){
 
             <div class='form-group'>
               <label for='pais'>¿De dónde sos?</label>
-              <select class="form-control select-pais" name="country">
+              <select class="form-control select-pais" name="zonaPertenencia">
                 <option class="select-pais">¿Dónde vives?</option>
-                <?php foreach ($paises as $pais):?>
-                  <?php if($pais == $country): ?>
-                    <option selected value="<?=$pais?>"><?=$pais?></option>
+                <?php foreach ($zonas as $zona):?>
+                  <?php if($zona == $zonaPertenencia): ?>
+                    <option selected value="<?=$zona?>"><?=$zona?></option>
                   <?php else: ?>
-                    <option value="<?=$pais?>"><?=$pais?></option>
+                    <option value="<?=$zona?>"><?=$zona?></option>
                   <?php endif; ?>
                 <?php endforeach; ?>
               </select>
@@ -283,7 +283,7 @@ if($_POST){
 
             <div class="form-group">
               <label for="exampleInputPassword1">Contanos sobre vos</label>
-              <input type="textarea" class="form-control" id="exampleInputPassword1" name="sobreVos" placeholder="Confirma tu contraseña">
+              <input type="textarea" class="form-control" id="exampleInputPassword1" name="sobreVos" placeholder="¿Quieres adoptar? ¿Quieres dar en adopción? ¿Por qué? ¿Tienes otras mascotas? ...">
             </div>
 
             <div class="form-group">

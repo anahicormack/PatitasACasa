@@ -13,7 +13,7 @@ $errores = [];
 $name = trim($info['name']);
 $lastname = trim($info['lastname']);
 $email = trim($info['email']);
-$country = $info['country'];
+$zonaPertenencia = $info['zonaPertenencia'];
 $password = trim($info['password']);
 $rpassword = trim($info['rpassword']);
 
@@ -30,8 +30,8 @@ if ($email == '') {
 } elseif (existeEmail($email)) {
       $errores['email'] = 'Esta dirección de email ya existe para otro usuario';
   }
-if ($country == '') {
-    $errores['country'] = 'Debes completar tu pais de residencia';
+if ($zonaPertenencia == '') {
+    $errores['zonaPertenencia'] = 'Debes completar tu pais de residencia';
 }
 if ($password == '' || $rpassword == '') {
     $errores['password'] = 'Debes completar tu contraseña';
@@ -48,7 +48,7 @@ function crearArrayUsuario($info, $nombreFoto){
     "name" => $info["name"],
     "lastname" => $info["lastname"],
     "email" => $info["email"],
-    "country" => $info["country"],
+    "zonaPertenencia" => $info["zonaPertenencia"],
     "password" => password_hash($info["password"], PASSWORD_DEFAULT),
     'src' => 'uploadsProyectoFinal/'.traerUltimoID().'.'.$ext,
   ];
