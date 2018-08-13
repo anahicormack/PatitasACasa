@@ -1,10 +1,11 @@
 <?php
 require_once('funcionesProyectoFinal.php');
 
-if(estaLogueado()) {
-  header('location: perfil.php');
-  exit;
-}
+
+echo "actualizar!";
+var_dump($_POST['id']);
+
+
 
 $zonas = ["CABA", "GBA Zona Norte", "GBA Zona Sur", "GBA Zona Este", "GBA Zona Oeste", "Otro"];
 
@@ -20,63 +21,18 @@ $emailLogin = "";
 $passwordLogin = "";
 
 if($_POST){
-  if(esLogin($_POST)){
-    $emailLogin = trim($_POST["email-login"]);
-    $passwordLogin = trim($_POST["password-login"]);
-
-    $errores = validarLogin($_POST);
-
-        if (empty($errores)) {
-
-          $usuario = new Usuario();
-          $usuario->setAttr('email',$emailLogin);
-          if ($usuario->findXAttr('email', true)){
-            if(password_verify($passwordLogin ,$usuario->getAttr('password'))) {
-              loguear($usuario);
-              if ($_POST["remember"]){
-                setcookie("id", $usuario->getAttr("id"), time() + 3600);
-              }
-
-             header('location: perfil.php');
-             exit;
-            }else {
-              $errores[] = 'No estás registrado o verifica que tu usuario y/o contraseña sean correctos';
-            }
-          }else {
-            $errores[] = 'No estás registrado o verifica que tu usuario y/o contraseña sean correctos';
-        }
-    }
-  } else {
 
     $usuario = new Usuario();
+    $usuario->setAttr('id',$_POST['id']);
+    $usuario->findXAttr('id',true);
+
 
     foreach ($_POST as $attr => $value) {
       $usuario->setAttr($attr, trim($value));
     }
 
-    // lo siguiente lo dejo por el tema de la persistencia
-    $name = trim($_POST["name"]);
-    $lastname = trim($_POST["lastname"]);
-    $email = trim($_POST["email"]);
-    $zonaPertenencia = $_POST["zonaPertenencia"];
-    $password = trim($_POST["password"]);
-    $rpassword = trim($_POST["rpassword"]);
-
-    $errores = validar($usuario, $rpassword);
-
-    if (empty($errores)) {
-//  		$errores = guardarImagen('archivo');
-  		if (count($errores) == 0) {
-        $usuario->setAttr('password',password_hash($usuario->getAttr('password'), PASSWORD_DEFAULT));
-        $usuario->save();
-        header('Location: registroLogIn.php?registroOK');
-      }
-    }
   }
-  if (count($errores) > 0) {
-      $visible = 'flex';
-  }
-}
+
 
 ?>
 <!DOCTYPE html>
@@ -235,45 +191,22 @@ if($_POST){
           <div class="main-container">
           <div class="logo-container"><a href="index.php"><img src="images/logo.jpeg" alt="mascotas" class="small-logo"></img></a></div>
 
-            <div class="header-form">
-              <h2>Bienvenido a<h2><h1>Patitas a casa<h1>
-            </div>
 
-            <div class="form-group">
-              <label for="exampleInputEmail1">Ingresa tu email</label>
-              <input type="email" name="email-login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email.com" value="<?=$emailLogin?>">
-            </div>
-
-            <div class="form-group">
-              <label for="exampleInputPassword1">Ingresa tu contraseña</label>
-              <input type="password" name="password-login" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-            </div>
-
-            <div><button type="submit" class="btn-primary">INGRESA</button></div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1" value="yes" name="remember">
-              <label class="form-check-label" for="exampleCheck1">Recordar usuario</label>
-            </div>
-          </form>
-
-
-          <div><span><a class="forgot-password" href="#">¿Olvidaste tu contraseña?</a></span></div>
-
-          <div class="register"><h2>REGISTRATE</h2></div>
+          <div class="register"><h2>EDITA TU PERFIL</h2></div>
           <form method="post" enctype="multipart/form-data">
             <div class="form-group">
-              <label for="exampleInputName">Ingresa tu nombre</label>
-              <input type="name" class="form-control" id="exampleInputName" name="name" aria-describedby="nameHelp"  placeholder="Nombre" value="<?=$name?>">
+              <label for="exampleInputName">Nombre:</label>
+              <input type="name" class="form-control" id="exampleInputName" name="name" aria-describedby="nameHelp"  placeholder="Nombre" value="<?=$usuario->getAttr('name')?>">
             </div>
 
             <div class="form-group">
-              <label for="exampleInputApellido">Ingresa tu apellido</label>
-              <input type="name" class="form-control" id="exampleInputlastname" name="lastname" aria-describedby="nameHelp" placeholder="Apellido" value="<?=$lastname?>">
+              <label for="exampleInputApellido">Apellido:</label>
+              <input type="name" class="form-control" id="exampleInputlastname" name="lastname" aria-describedby="nameHelp" placeholder="Apellido" value="<?=$usuario->getAttr('lastname')?>">
             </div>
 
             <div class="form-group">
-              <label for="exampleInputEmail1">Ingresa tu email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Email" value="<?=$email?>">
+              <label for="exampleInputEmail1">Ingresa tu email:</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Email" value="<?=$usuario->getAttr('email')?>">
             </div>
 
             <div class='form-group'>
@@ -281,7 +214,7 @@ if($_POST){
               <select class="form-control select-pais" name="zonaPertenencia">
                 <option class="select-pais">¿Dónde vives?</option>
                 <?php foreach ($zonas as $zona):?>
-                  <?php if($zona == $zonaPertenencia): ?>
+                  <?php if($zona == $usuario->getAttr('zonaPertenencia')): ?>
                     <option selected value="<?=$zona?>"><?=$zona?></option>
                   <?php else: ?>
                     <option value="<?=$zona?>"><?=$zona?></option>
@@ -295,22 +228,8 @@ if($_POST){
               <input type="textarea" class="form-control" id="exampleInputPassword1" name="sobreVos" placeholder="¿Quieres adoptar? ¿Quieres dar en adopción? ¿Por qué? ¿Tienes otras mascotas? ...">
             </div>
 
-            <div class="form-group">
-              <label for="exampleInputPassword1">Ingresa tu contraseña</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Contraseña">
-            </div>
-
-            <div class="form-group">
-              <label for="exampleInputPassword1">Confirma tu contraseña</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" name="rpassword" placeholder="Confirma tu contraseña">
-            </div>
-
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01" name="archivo">
-              <label class="custom-file-label" for="inputGroupFile01">Ingresa tu foto de perfil</label>
-            </div>
-
-            <div><button type="createAccount" class="btn-primary">CREA TU CUENTA</button></div>
+  
+            <div><button type="createAccount" class="btn-primary">LISTO!</button></div>
 
         </div>
             <br/>

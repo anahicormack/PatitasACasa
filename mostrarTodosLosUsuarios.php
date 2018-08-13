@@ -5,7 +5,6 @@ $user = new Usuario();
 
 $todosLosUsuarios = $user->findAll();
 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,7 +13,6 @@ $todosLosUsuarios = $user->findAll();
     <title></title>
   </head>
   <body>
-
       <table>
          <tr>
          <?php foreach ($user->getColumns() as $columna):?>
@@ -24,9 +22,20 @@ $todosLosUsuarios = $user->findAll();
          <?php foreach ($todosLosUsuarios as $unUsuario):?>
            <tr>
             <?php foreach ($unUsuario->getDatos() as $dato):?>
-             <td><?=$dato;?></td>
-             <pre>
+              <td><?=$dato;?></td>
             <?php endforeach; ?>
+            <td>
+              <form class="" action="update.php" method="post">
+              <input hidden type="text" name="id" value="<?=$unUsuario->getAttr('id');?>">
+              <button type="submit" class="btn-primary">Editar</button>
+              </form>
+            </td>
+            <td>
+              <form class="" action="eliminar.php" method="post">
+              <input hidden type="text" name="id" value="<?=$unUsuario->getAttr('id');?>">
+              <button type="submit" class="btn-primary">Eliminar</button>
+              </form>
+            </td>
           </tr>
         <?php endforeach; ?>
        </table>

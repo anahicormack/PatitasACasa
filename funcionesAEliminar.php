@@ -65,6 +65,18 @@ function guardarUsuario($usuario){
     return $ultimoID + 1;
   }
 
+  function traerPorId($id){
+    $todos = traerTodos();
+
+    foreach ($todos as $usuario) {
+      if ($id == $usuario['id']) {
+        return $usuario;
+      }
+    }
+
+    return false;
+  }
+
   function guardarImagen($inputFoto){
       $errores = [];
 

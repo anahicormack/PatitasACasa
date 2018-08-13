@@ -63,17 +63,6 @@ function loguear($usuario) {
   $_SESSION["id"] = $usuario->getAttr("id");
 }
 
-function traerPorId($id){
-  $todos = traerTodos();
-
-  foreach ($todos as $usuario) {
-    if ($id == $usuario['id']) {
-      return $usuario;
-    }
-  }
-
-  return false;
-}
 
 function estaLogueado() {
   if (isset($_COOKIE["id"])){

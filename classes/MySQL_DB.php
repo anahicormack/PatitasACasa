@@ -79,7 +79,7 @@ class MySQL_DB extends DB
     return $arrayDeObjetos;
   }
 
-  function update($modelo, $datos, $id){
+  public function update($modelo, $datos, $id){
     global $db;
     $set = '';
 

@@ -70,7 +70,4 @@ class Modelo
     }
     return false;
   }
-
-
-
 }
