@@ -1,5 +1,4 @@
 <?php
-
 require_once('funcionesProyectoFinal.php');
 
 if(estaLogueado()) {
@@ -27,25 +26,35 @@ if($_POST){
 
     $errores = validarLogin($_POST);
 
+        if (empty($errores)) {
 
-    if (empty($errores)) {
+          $usuario = new Usuario();
+          $usuario->setAttr('email',$emailLogin);
+          if ($usuario->findXAttr('email', true)){
+            if(password_verify($passwordLogin ,$usuario->getAttr('password'))) {
+              loguear($usuario);
+              if ($_POST["remember"]){
+                setcookie("id", $usuario["id"], time() + 3600);
+              }
 
-      $usuario = existeEmailYPassword($emailLogin, $passwordLogin);
-      if ($usuario) {
-        loguear($usuario);
-
-        if ($_POST["remember"]){
-          setcookie("id", $usuario["id"], time() + 3600);
+             header('location: perfil.php');
+             exit;
+            }else {
+              $errores[] = 'No estás registrado o verifica que tu usuario y/o contraseña sean correctos';
+            }
+          }else {
+            $errores[] = 'No estás registrado o verifica que tu usuario y/o contraseña sean correctos';
         }
-
-
-        header('location: perfil.php');
-        exit;
-      } else {
-        $errores[] = 'No estás registrado o verifica que tu usuario y/o contraseña sean correctos';
-      }
     }
   } else {
+
+    $usuario = new Usuario();
+
+    foreach ($_POST as $attr => $value) {
+      $usuario->setAttr($attr, trim($value));
+    }
+
+    // lo siguiente lo dejo por el tema de la persistencia
     $name = trim($_POST["name"]);
     $lastname = trim($_POST["lastname"]);
     $email = trim($_POST["email"]);
@@ -53,13 +62,13 @@ if($_POST){
     $password = trim($_POST["password"]);
     $rpassword = trim($_POST["rpassword"]);
 
-    $errores = validar($_POST);
+    $errores = validar($usuario, $rpassword);
 
     if (empty($errores)) {
-  		$errores = guardarImagen('archivo');
+//  		$errores = guardarImagen('archivo');
   		if (count($errores) == 0) {
-  			$usuario = crearArrayUsuario($_POST,'archivo');
-  	    guardarUsuario($usuario);
+        $usuario->setAttr('password',password_hash($usuario->getAttr('password'), PASSWORD_DEFAULT));
+        $usuario->save();
         header('Location: registroLogIn.php?registroOK');
       }
     }

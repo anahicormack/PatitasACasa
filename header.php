@@ -39,8 +39,11 @@
 
 <!-- Si esta logueado, mostrarme un echo del nombre y mandarlo a su perfil-->
 <?php if (estaLogueado()):?>
-  <?php $usuario = traerPorID($_SESSION['id'])?>
-        <li> <a href="perfil.php"><button type="button" class="btn btn-warning"> <?=$usuario['name']?> </button> </a> </li>
+  <?php $usuario = new Usuario();
+        $usuario->setAttr('id',$_SESSION['id']);
+        $usuario->findXAttr('id',true);
+  ?>
+        <li> <a href="perfil.php"><button type="button" class="btn btn-warning"> <?=$usuario->getAttr('name');?> </button> </a> </li>
 
 <!-- Si no esta logueado mostrarme el boton de Log In y mandarlo a registrarse-->
   <?php else: ?>
