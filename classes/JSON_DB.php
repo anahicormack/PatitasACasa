@@ -23,11 +23,18 @@ class JSON_DB extends DB
 
   }
 
+  public function delete($modelo, $id){
+
+  }
+
   public function find($modelo, $id){
 
   }
 
   public function findAll($modelo){
+
+  }
+  public function findBy($modelo, $filtros){
 
   }
   public function findXAttr($modelo, $attr){

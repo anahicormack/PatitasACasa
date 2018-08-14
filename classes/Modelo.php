@@ -9,7 +9,7 @@ class Modelo
 
   public function __construct($datos=[]){
     $this->datos = $datos;
-    $this->db = new MySQL_DB('mysql:host=localhost; dbname=patitasACasa; charset=utf8');
+    $this->db = new MySQL_DB('mysql:host=localhost; dbname=patitasacasa; charset=utf8');
   }
 
   public function getColumns(){
@@ -30,6 +30,14 @@ class Modelo
 
   private function insert(){
     $this->db->insert($this, $this->datos);
+  }
+
+  private function update(){
+    $this->db->update($this, $this->datos, $this->getAttr('id'));
+  }
+
+  public function delete(){
+    $this->db->delete($this, $this->getAttr('id'));
   }
 
   public function getAttr($attr){
@@ -53,6 +61,11 @@ class Modelo
 
   public function findAll(){
     $todosLosObjetos = $this->db->findAll($this);
+    return isset($todosLosObjetos) ? $todosLosObjetos : null;
+  }
+
+  public function findBy($filtros){
+    $todosLosObjetos = $this->db->findBy($this, $filtros);
     return isset($todosLosObjetos) ? $todosLosObjetos : null;
   }
 

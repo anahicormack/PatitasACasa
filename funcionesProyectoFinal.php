@@ -3,9 +3,9 @@ require_once 'classes/DB.php';
 require_once 'classes/JSON_DB.php';
 require_once 'classes/MySQL_DB.php';
 require_once 'classes/Modelo.php';
-require_once 'classes/Usuario.php';
-require_once 'classes/Animal.php';
-
+require_once 'classes/usuario.php';
+require_once 'classes/mascota.php';
+require_once 'classes/adopcion.php';
 
 session_start();
 

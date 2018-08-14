@@ -22,15 +22,16 @@
   <!--INDEX-->
   <div class ="espacio01"> </div>
       <div class="containerFormulario">
-        <form action= "script.php" method="post" class="formularioBusqueda">
+        <form action= "mascotas.php" method="get" class="formularioBusqueda">
           <div class="container-fluid">
           <label> ESTOY BUSCANDO...</label>
           </div>
           <div class="container-fluid">
           <div>
-              <select class="selectpicker"  title="ANIMAL" data-width="40%">
-                <option>PERRO</option>
-                <option>GATO</option>
+              <select class="selectpicker" title="ANIMAL" name="tipo" data-width="40%">
+                <option value="perro">PERRO</option>
+                <option value="gato">GATO</option>
+                <option value="otro">OTRO</option>
               </select>
             </div>
             <div class="select01">
@@ -49,18 +50,18 @@
               </select>
           </div>
           <div class="select02">
-              <select class="selectpicker"  title="TAMAÑO" data-width="40%">
-                <option>Chico</option>
-                <option>Mediano</option>
-                <option>Grande</option>
+              <select class="selectpicker"  title="TAMAÑO" data-width="40%" name="tamanio">
+                <option value="pequeño">Pequeño</option>
+                <option value="mediano">Mediano</option>
+                <option value="grande">Grande</option>
               </select>
-              <select class="selectpicker"  title="SEXO" data-width="40%">
-                <option>Hembra</option>
-                <option>Macho</option>
+              <select class="selectpicker" name="sexo" title="SEXO" data-width="40%">
+                <option value="hembra">Hembra</option>
+                <option value="macho">Macho</option>
               </select>
           </div>
             <div>
-            <a href="construction.php"><button type="button" class="btn btn-warning" id="btnBuscar"> ¡BUSCAR! </button></a>
+              <input type="submit" class="btn btn-warning" id="btnBuscar" value="¡BUSCAR!" />
             </div>
         </div>
         </form>

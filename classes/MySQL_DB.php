@@ -7,7 +7,7 @@ class MySQL_DB extends DB
   public function __construct($ruta)
   {
     $usuario = 'root';
-    $password = '';
+    $password = 'root';
     $opciones = [ PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ];
     try {
     	$this->conn = new PDO($ruta, $usuario, $password, $opciones);
@@ -79,8 +79,36 @@ class MySQL_DB extends DB
     return $arrayDeObjetos;
   }
 
+  public function findBy($modelo, $filtros){
+    $sql = 'select * from '.$modelo->table;
+    $sqlWhere = '';
+    foreach($filtros as $key => $value) {
+      if ($sqlWhere == '') {
+        $sqlWhere .= ' where '. $key . " = :" . $key;
+      } else {
+        $sqlWhere .= ' and '. $key . " = :" . $key;
+      }
+    }
+    $sql .= $sqlWhere;
+    $stmt = $this->conn->prepare($sql);
+    foreach($filtros as $key => $value) {
+      $stmt->bindValue(':' . $key, $value);
+    }
+    $stmt->execute();
+
+    $arrayDeObjetos = [];
+
+    while ($fila= $stmt->fetch(PDO::FETCH_ASSOC)){
+      $unObjeto = new Modelo();
+      foreach ($fila as $attr => $value) {
+        $unObjeto->setAttr($attr, $value);
+      }
+      $arrayDeObjetos[]=$unObjeto;
+    }
+    return $arrayDeObjetos;
+  }
+
   public function update($modelo, $datos, $id){
-    global $db;
     $set = '';
 
     foreach ($datos as $key => $value) {
@@ -91,7 +119,20 @@ class MySQL_DB extends DB
     $sql = 'update '.$modelo->table.' set ' . $set . ' where id = ' . $id;
 
     try {
-      $stmt = $db->prepare($sql);
+      $stmt = $this->conn->prepare($sql);
+      $stmt->execute();
+    } catch(Exception $e) {
+      $e->getMessage();
+    }
+  }
+
+  public function delete($modelo, $id){
+    global $db;
+
+    $sql = 'delete from '.$modelo->table.' where id = ' . $id;
+
+    try {
+      $stmt = $this->conn->prepare($sql);
       $stmt->execute();
     } catch(Exception $e) {
       $e->getMessage();
