@@ -605,4 +605,37 @@ label {
 #label-footer {
   color: #ffffff;
 }
-.
+
+/*BOTON USUARIO HEADER*/
+
+.w3-dropdown-hover.w3-right {
+  background-color: #4A72B0;
+}
+
+#cajitaboton {
+  background-color: #4A72B0;
+}
+
+#w3button {
+  color: #4A72B0;
+}
+
+/*.felchita {
+    line-height: 3;
+}
+COMO LA BAJO UN POCO SIN QUE CAMBIE EL TAMAÑO DEL BOTON
+
+/*FIN BOTON USUARIO*/
+
+/*PERFIL*/
+.containerperfil {
+  height: 600px;
+}
+
+.containerperfil a:hover {
+  text-decoration: none;
+}
+
+
+
+/*FIN PERFIL*/

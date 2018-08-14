@@ -7,6 +7,7 @@
     <link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet"> <!-- ionicons-->
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:600" rel="stylesheet"> <!-- google fonts-->
 <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Leckerli+One|Pacifico" rel="stylesheet">
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--w3-->
     <link rel="stylesheet" href="css/EstilosJose.css"> <!--CSS-->
     <title>Header</title>
   </head>
@@ -43,7 +44,17 @@
         $usuario->setAttr('id',$_SESSION['id']);
         $usuario->findXAttr('id',true);
   ?>
-        <li> <a href="perfil.php"><button type="button" class="btn btn-warning"> <?=$usuario->getAttr('name');?> </button> </a> </li>
+        <li>
+          <div class="w3-container">
+            <div class="w3-dropdown-hover w3-right" >
+              <button class="w3-button btn btn-warning"><?=$usuario->getAttr('name');?>        <ion-icon name="arrow-dropdown" class="felchita"></ion-icon></button>
+              <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0">
+                <a href="perfil.php" class="w3-bar-item w3-button" id="w3button">Mi Perfil</a>
+                <a href="perfil.php?logout" class="w3-bar-item w3-button" id="w3button">Cerrar Sesión</a>
+              </div>
+            </div>
+          </div>
+        </li>
 
 <!-- Si no esta logueado mostrarme el boton de Log In y mandarlo a registrarse-->
   <?php else: ?>

@@ -2,7 +2,7 @@
 require_once('funcionesProyectoFinal.php');
 
 if(estaLogueado()) {
-  header('location: perfil.php');
+  header('location: index.php');
   exit;
 }
 
@@ -37,7 +37,7 @@ if($_POST){
                 setcookie("id", $usuario->getAttr("id"), time() + 3600);
               }
 
-             header('location: perfil.php');
+             header('location: index.php');
              exit;
             }else {
               $errores[] = 'No estás registrado o verifica que tu usuario y/o contraseña sean correctos';
@@ -166,10 +166,11 @@ if($_POST){
         margin: 35px 0px 10px 0px;
         padding: 8px;
         border-radius: 50px;
-        font-size: 1.2em;
+        font-size: 1em;
         text-align: center;
         font-weight: bold;
         font-family: 'Barlow Condensed', sans-serif;
+        /*AGREGARLE QUE LLEGUE A LOS BORDES DEL DIV Y NO SEAN REDONDOS*/
       }
       .select-pais {
         font-style: italic;
@@ -215,7 +216,8 @@ if($_POST){
 </head>
 <body>
   <?php if(isset($_GET['registroOK'])): ?>
-    <div class="registroOk">¡Registro Exitoso!</div>
+    <style> .registrodiv {display:none;}</style>
+    <div class="registroOk">¡Registro Exitoso! <style> .registroOk {display: none;}</style></div>
   <?php endif; ?>
   <div class="errors-container" style="display: <?php echo isset($visible) ? $visible : '' ; ?>">
     <div class="errors"
@@ -240,40 +242,47 @@ if($_POST){
             </div>
 
             <div class="form-group">
+              <div class="register"><h2>INICIAR SESION</h2></div>
               <label for="exampleInputEmail1">Ingresa tu email</label>
               <input type="email" name="email-login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email.com" value="<?=$emailLogin?>">
+              <br>
             </div>
 
             <div class="form-group">
               <label for="exampleInputPassword1">Ingresa tu contraseña</label>
               <input type="password" name="password-login" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                <br>
             </div>
 
             <div><button type="submit" class="btn-primary">INGRESA</button></div>
+              <br>
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1" value="yes" name="remember">
               <label class="form-check-label" for="exampleCheck1">Recordar usuario</label>
-            </div>
+            </div> <!--falta mandarlo para el medio-->
           </form>
 
 
-          <div><span><a class="forgot-password" href="#">¿Olvidaste tu contraseña?</a></span></div>
-
-          <div class="register"><h2>REGISTRATE</h2></div>
+          <div><span><a class="forgot-password" href="#">¿Olvidaste tu contraseña?</a></span></div> <!--falta mandarlo para el medio-->
+          <div class="registrodiv">
+          <div class="register"><h2>REGISTRARME</h2></div>
           <form method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label for="exampleInputName">Ingresa tu nombre</label>
               <input type="name" class="form-control" id="exampleInputName" name="name" aria-describedby="nameHelp"  placeholder="Nombre" value="<?=$name?>">
+              <br>
             </div>
 
             <div class="form-group">
               <label for="exampleInputApellido">Ingresa tu apellido</label>
               <input type="name" class="form-control" id="exampleInputlastname" name="lastname" aria-describedby="nameHelp" placeholder="Apellido" value="<?=$lastname?>">
+                <br>
             </div>
 
             <div class="form-group">
               <label for="exampleInputEmail1">Ingresa tu email</label>
               <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Email" value="<?=$email?>">
+                <br>
             </div>
 
             <div class='form-group'>
@@ -288,29 +297,37 @@ if($_POST){
                   <?php endif; ?>
                 <?php endforeach; ?>
               </select>
+                <br>
             </div>
 
-            <div class="form-group">
-              <label for="exampleInputPassword1">Contanos sobre vos</label>
-              <input type="textarea" class="form-control" id="exampleInputPassword1" name="sobreVos" placeholder="¿Quieres adoptar? ¿Quieres dar en adopción? ¿Por qué? ¿Tienes otras mascotas? ...">
-            </div>
 
             <div class="form-group">
               <label for="exampleInputPassword1">Ingresa tu contraseña</label>
               <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Contraseña">
+                <br>
             </div>
 
             <div class="form-group">
               <label for="exampleInputPassword1">Confirma tu contraseña</label>
               <input type="password" class="form-control" id="exampleInputPassword1" name="rpassword" placeholder="Confirma tu contraseña">
+                <br>
             </div>
+
+
+                      <div class="form-group">
+                          <label for="exampleInputPassword1">Contanos un poco sobre vos</label>
+                          <input type="textarea" class="form-control" id="exampleInputPassword1" name="sobreVos" placeholder="¿Quieres adoptar? ¿Quieres dar en adopción? ¿Por qué? ¿Tienes otras mascotas? ...">
+                            <br>
+                        </div>
 
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="inputGroupFile01" name="archivo">
               <label class="custom-file-label" for="inputGroupFile01">Ingresa tu foto de perfil</label>
+                <br>
             </div>
 
             <div><button type="createAccount" class="btn-primary">CREA TU CUENTA</button></div>
+</div>
 
         </div>
             <br/>

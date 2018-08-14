@@ -23,17 +23,29 @@ if (isset($_GET['logout']))
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:600" rel="stylesheet"> <!-- google fonts-->
 <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Leckerli+One|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="css/EstilosJose.css"> <!--CSS-->
-    <title><?=$usuario['name']?></title>
+    <title>Mi Perfil</title>
   </head>
   <body>
-  <h2>Bienvenido a tu perfil<h2>
-    <a href="perfil.php?logout">Cerrar sesión</a>
-  <h2><a href="formMascota.php">Quiero dar una mascota en adopción</a></h2>
-  <h2><a href="mascotas.php?misMascotas">Quiero ver mis mascotas en adopción</a></h2>
-  <h2><a href="mascotas.php">Quiero adoptar una mascota</a></h2>
-  <h2><a href="index.php">Volver a Página Principal</a></h2>
-  <h2><a href="PreguntasAdopcion.php">Ir a Preguntas Frecuentes</a></h2>
+    <?php
+      require_once("header.php");
+     ?>
+     <div class="containerperfil">
+       <div class="container-fluid">
 
+
+
+        <h2>Bienvenido a tu perfil<h2>
+        <h2>Mi información<h2>
+        <h2><a href="mascotas.php?misMascotas" class="mismascotas">Mis mascotas en adopción</a></h2>
+        <h2><a href="formMascota.php">Subir mascotas</a></h2>
+
+
+
+      </div>
+    </div>
+  <?php
+    require_once("footer.php");
+   ?>
 
   <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
