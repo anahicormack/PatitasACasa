@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.22, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: patitasacasa
+-- Host: localhost    Database: patitasacasa
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.32-MariaDB
+-- Server version	5.7.22-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,6 +14,63 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `adopciones`
+--
+
+DROP TABLE IF EXISTS `adopciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `adopciones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `usuario_id` int(11) NOT NULL,
+  `mascota_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `adopciones`
+--
+
+LOCK TABLES `adopciones` WRITE;
+/*!40000 ALTER TABLE `adopciones` DISABLE KEYS */;
+INSERT INTO `adopciones` VALUES (1,11,5),(2,11,11);
+/*!40000 ALTER TABLE `adopciones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mascotas`
+--
+
+DROP TABLE IF EXISTS `mascotas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mascotas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(45) NOT NULL,
+  `nombre` varchar(45) NOT NULL,
+  `edad` int(11) NOT NULL,
+  `tamanio` varchar(45) NOT NULL,
+  `sexo` varchar(45) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `fk_usuario_mascota` (`user_id`),
+  CONSTRAINT `fk_usuario_mascota` FOREIGN KEY (`user_id`) REFERENCES `usuarios` (`id`) ON DELETE SET NULL ON UPDATE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mascotas`
+--
+
+LOCK TABLES `mascotas` WRITE;
+/*!40000 ALTER TABLE `mascotas` DISABLE KEYS */;
+INSERT INTO `mascotas` VALUES (5,'gato','Ramonita',6,'Pequeño','hembra',NULL),(11,'gato','Simona',3,'Grande','hembra',NULL),(12,'gato','Mati',6,'Grande','macho',11);
+/*!40000 ALTER TABLE `mascotas` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `usuarios`
@@ -30,7 +87,7 @@ CREATE TABLE `usuarios` (
   `zonaPertenencia` varchar(45) DEFAULT NULL,
   `password` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +96,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (8,'Walter','Gonzalez','walterjgonzalez@gmail.com','GBA Zona Norte','$2y$10$U4SbeJBqsVfeB85WVzD2Eur1LvAg3inoG2bnd9FEk6fo0Hey3HAcW'),(9,'pepe','lolo','pepelolo@hotmail.com','CABA','$2y$10$EBAmYr.u8ts59Qa0prgmCu8/kO9vGy9oX43hbR4wjnfU//O85b.3K'),(10,'prueba','uno','prueba1@gmail.com','CABA','$2y$10$toQ0r7pXguPBIse8se27eumX5ymI7SKbmrGjZE6haPGW0lj37Ke5a');
+INSERT INTO `usuarios` VALUES (11,'Anahi','Cormack','anahi.cormack@gmail.com','GBA Zona Sur','$2y$10$585kdTt0ENkXJwKS9u8jnOe7leBu7ft9TeDdKQ6HFWKxpxnfgurU6');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-12 22:30:25
+-- Dump completed on 2018-08-14  1:12:26
