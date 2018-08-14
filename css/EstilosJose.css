@@ -639,3 +639,113 @@ COMO LA BAJO UN POCO SIN QUE CAMBIE EL TAMAÑO DEL BOTON
 
 
 /*FIN PERFIL*/
+
+/*MASCOTAS EN ADOPCION*/
+.mascotastitle {
+  width: 450px;
+  background-color:#4A72B0;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 2em;
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.adoptarbtn {
+  width: 140px;
+  background-color: #eba23f;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 1.2em;
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+/*FIN MASCOTAS EN ADOPCION*/
+
+/*PRUEBA*/
+.containerM{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.containerMascotas {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.containerMascota {
+  background-color: #ffffff;
+  width: 300px;
+  padding: 20px 0 20px 0;
+  margin-top: 50px;
+  margin-right: 40px;
+  margin-left: 40px;
+  font-weight: 600;
+  font-size: 1.2em;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  float: left;
+}
+
+.nombreMascota {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #4A72B0;
+  color: #ffffff;
+  text-align: center;
+  width: 80%;
+  border-radius: 50px;
+  letter-spacing: 1.2px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.datosMascota {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 0.8em;
+  margin-top: 5px;
+  color: rgba(74, 114, 176, 0.9);
+}
+
+.descripcionMascota p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 200;
+    font-size: 0.6em;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: rgba(74, 114, 176, 0.9);
+}
+
+#btnAdoptar {
+  border-radius: 50px;
+  font-size: 0.7em;
+  font-weight: 600;
+  letter-spacing: 0.9px;
+}
+
+/*FIN PRUEBA*/

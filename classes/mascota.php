@@ -45,4 +45,9 @@ class Mascota extends Modelo
 
     return parent::findBy($filtros);
   }
+
+
+public function findByAttr($filtros) {
+    return parent::findBy($filtros);
+  }
 }

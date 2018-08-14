@@ -72,7 +72,7 @@ if (!$_POST && isset($_GET['id'])) {
 
       <div class="form-group">
         <label for="exampleInputNumber">Edad</label>
-        <input type="number" class="form-control" id="exampleInputNumber" name="edad" aria-describedby="nameHelp"  placeholder="" value="<?= $mascota->getAttr('edad') ? $mascota->getAttr('edad') : '' ?>">
+        <input type="number"  min="0" class="form-control" id="exampleInputNumber" name="edad" aria-describedby="nameHelp"  placeholder="" value="<?= $mascota->getAttr('edad') ? $mascota->getAttr('edad') : '' ?>">
       </div>
 
     <br>
@@ -93,6 +93,15 @@ if (!$_POST && isset($_GET['id'])) {
         <label for="exampleInputNumber">Sexo</label></br>
         <input type="radio" class="form-control" id="exampleInputText" name="sexo" aria-describedby="nameHelp"  placeholder="" value="macho" <?= $mascota->getAttr('sexo') == 'macho' ? 'checked="checked"' : '' ?>>Macho<br>
         <input type="radio" class="form-control" id="exampleInputText" name="sexo" aria-describedby="nameHelp"  placeholder="" value="hembra" <?= $mascota->getAttr('sexo') == 'hembra' ? 'checked="checked"' : '' ?>>Hembra
+
+      </div>
+<br>
+  <!--AGREGAR DESCRIPCION-->
+      <div class="custom-file">
+        <label class="custom-file-label" for="inputGroupFile01">Ingresa una foto de la mascota</label>
+        <input type="file" class="custom-file-input" id="inputGroupFile01" name="archivo" value="<?= $mascota->getAttr('img') ? $mascota->getAttr('img') : '' ?>">
+
+          <br>
       </div>
 
       <?php if($mascota->getAttr('id')): ?>
@@ -104,7 +113,7 @@ if (!$_POST && isset($_GET['id'])) {
         <?php if($mascota->getAttr('id')): ?>
         <button type="createAccount" class="btn-primary">ACTUALIZAR</button>
       <?php else: ?>
-        <button type="createAccount" class="btn-primary">LISTO! Dar en adopción</button>
+        <button type="createAccount" class="btn-primary">DAR EN ADOPCIÓN</button>
       <?php endif; ?>
       </div>
 
