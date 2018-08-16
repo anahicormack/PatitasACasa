@@ -1,6 +1,5 @@
 <?php
 require_once('funcionesProyectoFinal.php');
-require_once("header.php");
 
 //require_once('Usuario.php');
 
@@ -43,23 +42,22 @@ if($_GET) {
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400" rel="stylesheet"> <!--google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="css/EstilosJose.css"> <!--CSS-->
-    <title>Mascotas</title>
+    <title>Mascotas</title> <!--porque no funciona???-->
   </head>
   <body>
-    <?php
-    //include("menu.php");
-    ?>
+
+    <?php require_once("header.php");?>
+
     <?php if (isset($_GET['misMascotas'])): ?>
       <div class="register"><h2 class=>MIS MASCOTAS EN ADOPCION</h2></div>
     <?php else: ?>
       <div class="register"><h2 class="mascotastitle">MASCOTAS EN ADOPCION</h2></div>
     <?php endif; ?>
+
       <div class="containerM">
-      <div class="containerMascotas">
-      <?php
-      foreach ($mascotas as $value):
-      ?>
-      <!--HAY QUE CAMBIAR LOS VALORES A MAYUSCULAS-->
+        <div class="containerMascotas">
+          <?php foreach ($mascotas as $value):?>
+
         <!--/*$value->getAttr('id'), NO HACE FALTA VERLO-->
       <!--/$value->getAttr('img'),-->
         <!--/$value->getAttr('tipo'),NO HACE FALTA SE VE-->
@@ -69,9 +67,22 @@ if($_GET) {
 
             <div class="containerMascota">
               <div class="imgMascota"> <!--ACA METER LA FOTO DE LA DB-->
-                <img src="img/dog-round.svg" alt="" width="250px">
+                <?php if($value->getAttr('tipo')=="perro"):?>
+                   <img src="img/dog-round.svg" alt="" width="250px">
+                <?php elseif ($value->getAttr('tipo')=="gato"): ?>
+                   <img src="img/cat-round.svg" alt="" width="250px">
+                <?php else: ?>
+                  <img src="img/cebra-round.svg" alt="" width="250px">
+                <?php endif; ?>
               </div>
-              <div class="nombreMascota"> <?= $value->getAttr('nombre')?> </div>
+              <div class="nombreMascota">
+                 <?= $value->getAttr('nombre')?>
+                 <?php if($value->getAttr('sexo')=="macho"):?>
+                    <ion-icon name="male"></ion-icon>
+                  <?php else: ?>
+                    <ion-icon name="female"></ion-icon>
+                   <?php endif; ?>
+               </div>
               <div class="datosMascota">
                 <div class="edadMascota"> Edad: <?= $value->getAttr('edad')?></div>
                 <div class="tamañoMascota"> Tamaño: <?= $value->getAttr('tamanio')?></div>
@@ -79,7 +90,7 @@ if($_GET) {
               <div class="descripcionMascota">
                 <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ultricies, enim vehicula nullam duis orci in convallis neque, porta luctus imperdiet laoreet posuere venenatis penatibus.</p>
               </div>
-              <div>
+              <div class="botonesMascotas">
                 <?php if (isset($_GET['misMascotas'])): ?>
                   <form class="" action="" method="post">
                   <input type="hidden" name="eliminar" value="1">
@@ -98,10 +109,12 @@ if($_GET) {
                   </form>
                 <?php endif; ?>
               </div>
+              </div>
       <?php endforeach; ?>
       </div>
       </div>
-      </div>
+
+
   <h2><a href="perfil.php" class="volverbtn">Volver a mi Perfil</a></h2>
 
 
@@ -112,3 +125,5 @@ if($_GET) {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
   </body>
 </html>
+
+<?php require_once("footer.php"); ?>
