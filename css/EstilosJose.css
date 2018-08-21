@@ -170,6 +170,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 0px;
 }
 
 
@@ -641,19 +642,29 @@ COMO LA BAJO UN POCO SIN QUE CAMBIE EL TAMAÑO DEL BOTON
 /*FIN PERFIL*/
 
 /*MASCOTAS EN ADOPCION*/
+
+#mascotastitleDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .mascotastitle {
-  width: 450px;
+  width: 600px;
   background-color:#4A72B0;
   border-radius: 50px;
   border: none;
   outline: none;
   color: #ffffff;
-  font-size: 2em;
+  font-size: 2.2em;
   text-align: center;
   padding-right: 10px;
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 0px;
 }
 .adoptarbtn {
   width: 140px;
@@ -667,9 +678,7 @@ COMO LA BAJO UN POCO SIN QUE CAMBIE EL TAMAÑO DEL BOTON
   padding-right: 10px;
   padding-left: 10px;
 }
-/*FIN MASCOTAS EN ADOPCION*/
 
-/*PRUEBA*/
 .containerM{
   display: flex;
   flex-direction: column;
@@ -748,4 +757,53 @@ COMO LA BAJO UN POCO SIN QUE CAMBIE EL TAMAÑO DEL BOTON
   letter-spacing: 0.9px;
 }
 
-/*FIN PRUEBA*/
+.volverPerfil {
+  width: 500px;
+  background-color: #4A72B0;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 1em;
+  text-align: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  margin-bottom: 100px;
+}
+
+.volverPerfil:hover {
+  text-decoration: none;
+}
+
+.espacio02 {
+  width: 100%;
+  height: 40px;
+}
+/*FIN MASCOTAS EN ADOPCION*/
+
+#userName {
+  text-transform: uppercase;
+}
+
+.actualizarBtn {
+  border-radius: 50px;
+  margin-top: 10px;
+  background-color: #eba23f;
+  border-style: solid;
+  border-width: 0;
+  width: 180px;
+  color: #ffffff;
+}
+
+.eliminarBtn {
+  border-radius: 50px;
+  margin-top: 10px;
+  background-color: rgb(235, 80, 65);
+  border-style: solid;
+  border-width: 0;
+  width: 180px;
+  color: #ffffff;
+}

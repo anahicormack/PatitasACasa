@@ -32,11 +32,13 @@
       </a>
       <input type="checkbox" id="abrirMenu">
       <ul id="header-ul">
-        <li><a href="Index.php">INICIO</ion-icon></a></li> <!--Cambiar a index.php-->
+        <li><a href="index.php">INICIO</ion-icon></a></li> <!--Cambiar a index.php-->
         <li><a href="FAQ.php">PREGUNTAS FRECUENTES</a></li>
-        <li><a href="construction.php">ADOPTAR UN PERRO</a></li>
-        <li><a href="construction.php">ADOPTAR UN GATO</a></li>
-        <li><a href="construction.php">ANTES Y DESPUES</a></li>
+        <li><a href="perros.php">ADOPTAR UN PERRO</a></li>
+        <li><a href="gatos.php">ADOPTAR UN GATO</a></li>
+        <li><a href="otros.php">ADOPTAR OTRO ANIMAL</a></li>
+        <li><a href="mascotas.php">VER TODOS</a></li>
+      <!--  <li><a href="construction.php">ANTES Y DESPUES</a></li>-->
 
 <!-- Si esta logueado, mostrarme un echo del nombre y mandarlo a su perfil-->
 <?php if (estaLogueado()):?>
@@ -47,7 +49,7 @@
         <li>
           <div class="w3-container">
             <div class="w3-dropdown-hover w3-right" >
-              <button class="w3-button btn btn-warning"><?=$usuario->getAttr('name');?>        <ion-icon name="arrow-dropdown" class="felchita"></ion-icon></button>
+              <button class="w3-button btn btn-warning" id="userName"><?=$usuario->getAttr('name');?>        <ion-icon name="arrow-dropdown" class="felchita"></ion-icon></button>
               <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0">
                 <a href="perfil.php" class="w3-bar-item w3-button" id="w3button">Mi Perfil</a>
                 <a href="perfil.php?logout" class="w3-bar-item w3-button" id="w3button">Cerrar Sesión</a>

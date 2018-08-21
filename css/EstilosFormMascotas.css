@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  margin: 0; /*porque no se pega al borde de la pagina??*/
+  padding: 0;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+  font-family: 'Barlow Condensed', sans-serif; /*ponerla NO negrita*/
+  /* color: #ffffff; */
+  font-size: 2em;
+  text-decoration: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: url(../img/huesitos.png) center center/cover
+}
+
+.containerFormMascotas{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.formMascotas {
+  background-color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 1.4em;
+  width: 60%;
+  border-radius: 50px;
+  border-style: solid;
+  border-color: #4A72B0;
+  border-width: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: rgba(74, 114, 176,0.9);
+}
+
+.formMascotas label {
+  color: rgba(74, 114, 176,0.9);
+}
+
+.formMascotas h2 {
+  color: #4A72B0;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 1.3em;
+}
+
+
+.tiposDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: rgba(74, 114, 176,0.9);
+}
+
+.tiposDiv2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: rgba(74, 114, 176,0.9);
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.tiposDiv3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: rgba(74, 114, 176,0.9);
+  padding-left: 180px;
+  padding-right: 180px;
+}
+
+.tipoDiv {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9em;
+}
+
+.align {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-left: 50px;
+margin-right: 50px;
+}
+
+.optionMascota {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.formMascotaTitles {
+  /*border-color: rgba(74, 114, 176,0.9);
+  border-width: 2px;
+  border-style: solid;
+  background-color: #ffffff;
+  border-radius: 50px;
+  */
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#exampleInputName, #exampleInputNumber{
+  width: 500px;
+  border-radius: 50px;
+  color: rgba(74, 114, 176,0.9);
+  font-size: 0.6em;
+  height: 40px;
+}
+
+select.form-control.select-pais {
+  color: rgba(127, 128, 130, 0.9);
+  width: 500px;
+  font-size: 0.6em;
+  height: 40px;
+  border-radius: 20px;
+}
+
+input#inputGroupFile01.custom-file-input{
+  background-color: red;
+}
+
+#darBtn {
+  width: 450px;
+  background-color: #eba23f;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 0.8em;
+  text-align: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/*.formMascota01 {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

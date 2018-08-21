@@ -7,7 +7,7 @@ class MySQL_DB extends DB
   public function __construct($ruta)
   {
     $usuario = 'root';
-    $password = '';
+    $password = 'root';
     $opciones = [ PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ];
     try {
     	$this->conn = new PDO($ruta, $usuario, $password, $opciones);

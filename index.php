@@ -24,7 +24,7 @@
       <div class="containerFormulario">
         <form action= "mascotas.php" method="get" class="formularioBusqueda">
           <div class="container-fluid">
-          <label> ESTOY BUSCANDO...</label>
+          <label> QUIERO ADOPTAR...</label>
           </div>
           <div class="container-fluid">
           <div>
@@ -66,6 +66,9 @@
         </div>
         </form>
       </div>
+
+
+
   <!--FIN INDEX-->
     <div class ="espacio01"> </div>
   <!--FOOTER-->

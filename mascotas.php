@@ -49,9 +49,9 @@ if($_GET) {
     <?php require_once("header.php");?>
 
     <?php if (isset($_GET['misMascotas'])): ?>
-      <div class="register"><h2 class=>MIS MASCOTAS EN ADOPCION</h2></div>
+      <div class="register" id="mascotastitleDiv"><h2 class="mascotastitle">MIS MASCOTAS EN ADOPCION</h2></div>
     <?php else: ?>
-      <div class="register"><h2 class="mascotastitle">MASCOTAS EN ADOPCION</h2></div>
+      <div class="register" id="mascotastitleDiv"><h2 class="mascotastitle">MASCOTAS EN ADOPCION</h2></div>
     <?php endif; ?>
 
       <div class="containerM">
@@ -92,15 +92,18 @@ if($_GET) {
               </div>
               <div class="botonesMascotas">
                 <?php if (isset($_GET['misMascotas'])): ?>
+
+                  <form action="formMascota.php" method="get">
+                    <input type="hidden" name="id" value="<?=$value->getAttr('id')?>">
+                    <input class="actualizarBtn" type="submit" name="" value="Actualizar">
+                  </form>
+
                   <form class="" action="" method="post">
                   <input type="hidden" name="eliminar" value="1">
                   <input type="hidden" name="id" value="<?=$value->getAttr('id')?>">
-                  <input type="submit" name="Eliminar" value="Eliminar">
+                  <input  class="eliminarBtn"type="submit" name="Eliminar" value="Eliminar">
                   </form>
-                  <form class="" action="formMascota.php" method="get">
-                    <input type="hidden" name="id" value="<?=$value->getAttr('id')?>">
-                    <input type="submit" name="" value="Actualizar">
-                  </form>
+
                 <?php else: ?>
                   <form class="" action="" method="post">
                     <input type="hidden" name="adoptar" value="1" class="adoptarbtn"> <!--AGREGAR TIPO MAIL-->
@@ -114,8 +117,9 @@ if($_GET) {
       </div>
       </div>
 
-
-  <h2><a href="perfil.php" class="volverbtn">Volver a mi Perfil</a></h2>
+      <div class="espacio02"> </div>
+      <h2><a href="perfil.php" class="volverPerfil">VOLVER A MI PERFIL</a></h2>
+      <div class="espacio02"> </div>
 
 
 
