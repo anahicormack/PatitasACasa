@@ -650,20 +650,20 @@ COMO LA BAJO UN POCO SIN QUE CAMBIE EL TAMAÑO DEL BOTON
 }
 
 .mascotastitle {
-  width: 600px;
+  width: 550px;
   background-color:#4A72B0;
   border-radius: 50px;
   border: none;
   outline: none;
   color: #ffffff;
-  font-size: 2.2em;
+  font-size: 2em;
   text-align: center;
   padding-right: 10px;
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: 600;
-  margin-top: 50px;
+  margin-top: 60px;
   margin-bottom: 0px;
 }
 .adoptarbtn {
@@ -684,7 +684,6 @@ COMO LA BAJO UN POCO SIN QUE CAMBIE EL TAMAÑO DEL BOTON
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .containerMascotas {
@@ -782,11 +781,6 @@ COMO LA BAJO UN POCO SIN QUE CAMBIE EL TAMAÑO DEL BOTON
   width: 100%;
   height: 40px;
 }
-/*FIN MASCOTAS EN ADOPCION*/
-
-#userName {
-  text-transform: uppercase;
-}
 
 .actualizarBtn {
   border-radius: 50px;
@@ -807,3 +801,219 @@ COMO LA BAJO UN POCO SIN QUE CAMBIE EL TAMAÑO DEL BOTON
   width: 180px;
   color: #ffffff;
 }
+
+/*FIN MASCOTAS EN ADOPCION*/
+
+/*PERFIL USUARIO*/
+
+#userName {
+  text-transform: uppercase;
+}
+
+.actualizarUsuario {
+  border-radius: 50px;
+  margin-top: 10px;
+  background-color: #eba23f;
+  border-style: solid;
+  border-width: 0;
+  width: 250px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1em;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.eliminarUsuario {
+  border-radius: 50px;
+  margin-top: 10px;
+  background-color: rgb(235, 80, 65);
+  border-style: solid;
+  border-width: 0;
+  width: 250px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1em;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.eliminarUsuario:hover {
+  text-decoration: none;
+  color: rgb(255, 191, 185);
+}
+
+.actualizarUsuario:hover {
+  text-decoration: none;
+  color: #f5cd98;
+}
+
+.mascotasUsuario {
+  border-radius: 50px;
+  margin-top: 10px;
+  background-color:#4A72B0;
+  border-style: solid;
+  border-width: 0;
+  width: 250px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.2em;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #ffffff;
+}
+
+.mascotasUsuario:hover {
+  text-decoration: none;
+}
+
+.mascotasUsuario2 {
+  border-radius: 50px;
+  margin-top: 10px;
+  background-color:#4A72B0;
+  border-style: solid;
+  border-width: 0;
+  width: 350px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.2em;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #ffffff;
+}
+
+.mascotasUsuario2:hover {
+  text-decoration: none;
+}
+
+.containerPerfil {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  color: #4A72B0;
+}
+
+.perfilUsuario {
+  background-color: #ffffff;
+  border-radius: 50px;
+  width: 1000px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.nombreUsuario {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.userData {
+  margin-left: 6px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.mailUsuario {
+  color: rgba(74, 114, 176, 0.9);
+  font-size: 1.3em;
+}
+
+.mascotasUsuario3 {
+  border-radius: 50px;
+  margin-top: 40px;
+  background-color:#4A72B0;
+  border-style: solid;
+  border-width: 0;
+  width: 350px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.2em;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #ffffff;
+}
+
+.descripcionUsuario {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.userDB {
+  border-radius: 50px;
+  border-style: solid;
+  border-color: #4A72B0;
+  border-width: 3px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.userBtns01 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.userBtns02 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.userBtnsDiv {
+  background-color: #ffffff;
+  border-radius: 50px;
+  width: 1000px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/*FIN PERFIL USUARIO*/

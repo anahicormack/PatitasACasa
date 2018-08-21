@@ -47,6 +47,7 @@ if($_GET) {
   <body>
 
     <?php require_once("header.php");?>
+    
 
     <?php if (isset($_GET['misMascotas'])): ?>
       <div class="register" id="mascotastitleDiv"><h2 class="mascotastitle">MIS MASCOTAS EN ADOPCION</h2></div>

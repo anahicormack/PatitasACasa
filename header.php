@@ -52,6 +52,7 @@
               <button class="w3-button btn btn-warning" id="userName"><?=$usuario->getAttr('name');?>        <ion-icon name="arrow-dropdown" class="felchita"></ion-icon></button>
               <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0">
                 <a href="perfil.php" class="w3-bar-item w3-button" id="w3button">Mi Perfil</a>
+                <a href="mascotas.php?misMascotas" class="w3-bar-item w3-button" id="w3button">Mis Mascotas</a>
                 <a href="perfil.php?logout" class="w3-bar-item w3-button" id="w3button">Cerrar Sesión</a>
               </div>
             </div>
